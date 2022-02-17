@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet" />
+    <!-- This is Sidebar menu CSS -->
+    <link href="~/Content/Css/sidebar-nav.min.css" rel="stylesheet" />
+    <!-- This is a Animation CSS -->
+    <link href="~/Content/Css/animate.css" rel="stylesheet" />
+    <!-- This is a Custom CSS -->
+    <link href="~/Content/Css/style.css" rel="stylesheet" />
+    <link href="~/Content/Css/blue.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <!-- Toggle icon for mobile view -->
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <!-- Logo -->
+                <div class="top-left-part">
+                    <a class="logo" href="index.html">
+                        <!-- Logo icon image, you can use font-icon also -->
+
+                        <b><img src="~/Content/images/eliteadmin-logo.png" alt="home" /></b>
+                        <!-- Logo text image you can use text also -->
+                        <span class="hidden-xs"><img src="~/Content/images/eliteadmin-text.png" alt="home" /></span>
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <!-- Search input and Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    
+                </ul>
+                <!-- This is the message dropdown -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+
+                    <!-- /.Task dropdown -->
+                    <!-- .user dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="~/Content/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.user dropdown-user -->
+                    </li>
+                    <!-- /.user dropdown -->
+                    <!-- .Megamenu -->
+                    <li class="mega-dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><span class="hidden-xs">Mega</span> <i class="icon-options-vertical"></i></a>
+                        <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li> <a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /.Megamenu -->
+                    
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- Left navbar-sidebar -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- Search input-group this is only view in mobile -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                            </span>
+                        </div>
+                        <!-- / Search input-group this is only view in mobile-->
+                    </li>
+                    <!-- User profile-->
+                    <li class="user-pro">
+                        <a href="#" class="waves-effect"><img src="~/Content/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <!-- User profile-->
+                    <li class="nav-small-cap m-t-10">--- Main Menu</li>
+                    <li><a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">İstatistikler </span></a> </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kitaplar<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)">Kitapları Listele</a></li>
+                            <li><a href="javascript:void(0)">Kitap Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Üyeler<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)">Üyeleri Listele</a></li>
+                            <li><a href="javascript:void(0)">Üye Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect active"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kullanıcı İşlemleri<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)">Kitapları Listele</a></li>
+                            <li><a href="javascript:void(0)">Kitap Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Multi Dropdown<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li>
+                                <a href="javascript:void(0)" class="waves-effect">Third Level <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-sidebar end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <!-- .page title -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">@ViewBag.title</h4>
+                    </div>
+                    <!-- /.page title -->
+                </div>
+                <!-- .row -->
+                <div class="row white-box">
+                            @RenderBody()
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2016 &copy; Elite Admin brought to you by themedesigner.in </footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Content/Js/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Js/bootstrap.min.js"></script>
+    <!-- Sidebar menu plugin JavaScript -->
+    <script src="~/Content/Js/sidebar-nav.min.js"></script>
+    <!--Slimscroll JavaScript For custom scroll-->
+    <script src="~/Content/Js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/Js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Content/Js/custom.js"></script>
+</body>
+</html>
