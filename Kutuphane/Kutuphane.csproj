@@ -98,8 +98,11 @@
     <Content Include="Content\Css\animate.css" />
     <Content Include="Content\Css\blue.css" />
     <Content Include="Content\Css\bootstrap.min.css" />
+    <Content Include="Content\Css\datatables.min.css" />
+    <Content Include="Content\Css\jquery.dataTables.min.css" />
     <Content Include="Content\Css\sidebar-nav.min.css" />
     <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Css\sweetalert2.min.css" />
     <Content Include="Content\images\alert.png" />
     <Content Include="Content\images\alert2.png" />
     <Content Include="Content\images\alert3.png" />
@@ -238,9 +241,13 @@
     <Content Include="Content\images\users\varun.jpg" />
     <Content Include="Content\Js\bootstrap.min.js" />
     <Content Include="Content\Js\custom.js" />
+    <Content Include="Content\Js\datatables.min.js" />
+    <Content Include="Content\Js\jquery.dataTables.min.js" />
     <Content Include="Content\Js\jquery.min.js" />
     <Content Include="Content\Js\jquery.slimscroll.js" />
+    <Content Include="Content\Js\Main.js" />
     <Content Include="Content\Js\sidebar-nav.min.js" />
+    <Content Include="Content\Js\sweetalert2.all.min.js" />
     <Content Include="Content\Js\waves.js" />
     <Content Include="Content\less\icons\font-awesome\.gitignore" />
     <Content Include="Content\less\icons\font-awesome\css\font-awesome.css" />

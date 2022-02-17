@@ -2,6 +2,28 @@
 @{
     ViewBag.Title = "Kategoriler";
 }
-
+@using Kutuphane.Data.Model
+@model List<Kategori>
 <h2>Kategoriler</h2>
-
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th style="width:65%">Ad</th>
+            <th style="width:15%">Kitap Sayısı</th>
+            <th style="width:10%">Güncelle</th>
+            <th style="width:10%">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ktg in Model)
+        {
+        <tr>
+            <td id="td_@ktg.Id">@ktg.Ad</td>
+            <td></td>
+            <td><button class="guncelle btn btn-custom" value="@ktg.Id">Güncelle</button></td>
+            <td><button class="sil btn btn-danger" value="@ktg.Id">Sil</button></td>
+        </tr>
+        }
+    </tbody>
+    
+</table>

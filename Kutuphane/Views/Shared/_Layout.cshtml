@@ -14,6 +14,17 @@
     <link href="~/Content/Css/style.css" rel="stylesheet" />
     <link href="~/Content/Css/blue.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- DAtatable css -->
+    <link href="~/Content/Css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!-- SweetAlert css -->
+    <link href="~/Content/Css/sweetalert2.min.css" rel="stylesheet" />
+    <style>
+        tfoot input {
+            width: 100%;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <div class="preloader">
@@ -39,7 +50,7 @@
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                    
+
                 </ul>
                 <!-- This is the message dropdown -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -91,7 +102,6 @@
                         </ul>
                     </li>
                     <!-- /.Megamenu -->
-                    
                     <!-- /.dropdown -->
                 </ul>
             </div>
@@ -125,10 +135,18 @@
                     <li class="nav-small-cap m-t-10">--- Main Menu</li>
                     <li><a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">İstatistikler </span></a> </li>
                     <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kategoriler<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="@Url.Action("Index","Kategori")">Listele</a></li>
+                            <li><a class="ktgEkle" href="javascript:void(0)">Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kitaplar<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)">Kitapları Listele</a></li>
-                            <li><a href="javascript:void(0)">Kitap Ekle</a></li>
+                            <li><a href="javascript:void(0)">Listele</a></li>
+                            <li><a href="javascript:void(0)">Ekle</a></li>
+                            <li><a href="javascript:void(0)">Ödünç Kitaplar</a></li>
                         </ul>
                     </li>
                     <li>
@@ -177,7 +195,7 @@
                 </div>
                 <!-- .row -->
                 <div class="row white-box">
-                            @RenderBody()
+                    @RenderBody()
                 </div>
                 <!-- /.row -->
 
@@ -200,5 +218,39 @@
     <script src="~/Content/Js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="~/Content/Js/custom.js"></script>
+    <!-- Datatables JQuery -->
+    <script src="~/Content/Js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            });
+
+            // DataTable
+            var table = $('#example').DataTable({
+                initComplete: function () {
+                    // Apply the search
+                    this.api().columns().every(function () {
+                        var that = this;
+
+                        $('input', this.footer()).on('keyup change clear', function () {
+                            if (that.search() !== this.value) {
+                                that
+                                    .search(this.value)
+                                    .draw();
+                            }
+                        });
+                    });
+                }
+            });
+
+        });
+    </script>
+    <!-- SweetAlert Js -->
+    <script src="~/Content/Js/sweetalert2.all.min.js"></script>
+    <script src="~/Content/Js/Main.js"></script>
 </body>
 </html>

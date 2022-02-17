@@ -23,14 +23,14 @@ namespace Kutuphane.Data.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public IQueryable GetAll()
+        public List<T> GetAll()
         {
-            return _dbSet;
+            return _dbSet.ToList();
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> predicate)
+        public List<T> GetAll(Expression<Func<T, bool>> predicate)
         {
-            return _dbSet.Where(predicate);
+            return _dbSet.Where(predicate).ToList();
         }
 
         public T GetById(int id)
@@ -43,19 +43,20 @@ namespace Kutuphane.Data.Repositories
         }
 
 
-        public void Add(T entity)
+        public T Add(T entity)
         {
-            _dbSet.Add(entity);
+            return _dbSet.Add(entity);
         }
-        public void Update(T entity)
+        public T Update(T entity)
         {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
+            return entity;
         }
 
-        public void Delete(T entity)
+        public T Delete(T entity)
         {
-            _dbSet.Remove(entity);
+            return _dbSet.Remove(entity);
         }
 
         public void Delete(int id)
