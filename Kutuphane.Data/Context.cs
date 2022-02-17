@@ -1,4 +1,5 @@
-﻿using Kutuphane.Data.Model;
+﻿using Kutuphane.Data.Migrations;
+using Kutuphane.Data.Model;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -8,7 +9,8 @@ namespace Kutuphane.Data
     {
         public Context() : base("Context")
         {
-
+            //Veri tabanı var ise güncelleme yok ise Oluşturma işlemi için bu kod parçacığı eklendi
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>("Context"));
         }
         /*
          Kutuphane programı için Db oluşturuluyor
