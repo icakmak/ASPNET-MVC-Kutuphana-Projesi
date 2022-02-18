@@ -101,6 +101,7 @@
     <Content Include="Content\Css\datatables.min.css" />
     <Content Include="Content\Css\jquery.dataTables.min.css" />
     <Content Include="Content\Css\sidebar-nav.min.css" />
+    <Content Include="Content\Css\spinners.css" />
     <Content Include="Content\Css\style.css" />
     <Content Include="Content\Css\sweetalert2.min.css" />
     <Content Include="Content\images\alert.png" />
@@ -245,7 +246,9 @@
     <Content Include="Content\Js\jquery.dataTables.min.js" />
     <Content Include="Content\Js\jquery.min.js" />
     <Content Include="Content\Js\jquery.slimscroll.js" />
-    <Content Include="Content\Js\Main.js" />
+    <Content Include="Content\Js\kitap.js" />
+    <Content Include="Content\Js\Yazar.js" />
+    <Content Include="Content\Js\Kategori.js" />
     <Content Include="Content\Js\sidebar-nav.min.js" />
     <Content Include="Content\Js\sweetalert2.all.min.js" />
     <Content Include="Content\Js\waves.js" />
@@ -291,6 +294,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KitapController.cs" />
+    <Compile Include="Controllers\Kitaplar.cs" />
+    <Compile Include="Controllers\UyeController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -462,6 +469,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Kategori\Index.cshtml" />
+    <Content Include="Views\Yazar\Index.cshtml" />
+    <Content Include="Views\Kitap\Index.cshtml" />
+    <Content Include="Views\Kitap\Ekle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -472,6 +482,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\Uye\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kutuphane.Data.Model\Kutuphane.Data.Model.csproj">

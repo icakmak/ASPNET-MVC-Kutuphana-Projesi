@@ -16,7 +16,7 @@ namespace Kutuphane.Data.Repositories
         lsiteleme ekleme silme gibi işlemleri yaptırıyoruz
          */
         protected readonly Context _context;
-        protected readonly DbSet<T> _dbSet;
+        private readonly DbSet<T> _dbSet;
         public Repository(Context context)
         {
             _context = context;
@@ -53,7 +53,6 @@ namespace Kutuphane.Data.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             return entity;
         }
-
         public T Delete(T entity)
         {
             return _dbSet.Remove(entity);

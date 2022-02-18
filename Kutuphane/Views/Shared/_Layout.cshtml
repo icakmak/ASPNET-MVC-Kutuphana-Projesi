@@ -18,6 +18,8 @@
     <link href="~/Content/Css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- SweetAlert css -->
     <link href="~/Content/Css/sweetalert2.min.css" rel="stylesheet" />
+    <!-- Spinner css -->
+    <link href="~/Content/Css/spinners.css" rel="stylesheet" />
     <style>
         tfoot input {
             width: 100%;
@@ -144,22 +146,29 @@
                     <li>
                         <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kitaplar<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)">Listele</a></li>
-                            <li><a href="javascript:void(0)">Ekle</a></li>
+                            <li><a href="@Url.Action("Index","Kitap")">Listele</a></li>
+                            <li><a href="@Url.Action("Ekle","Kitap")">Ekle</a></li>
                             <li><a href="javascript:void(0)">Ödünç Kitaplar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Yazarlar<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="@Url.Action("Index","Yazar")">Listele</a></li>
+                            <li><a class="yzrEkle" href="javascript:void(0)">Ekle</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Üyeler<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)">Üyeleri Listele</a></li>
+                            <li><a href="@Url.Action("Index","Uye")">Listele</a></li>
                             <li><a href="javascript:void(0)">Üye Ekle</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)" class="waves-effect active"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Kullanıcı İşlemleri<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)">Kitapları Listele</a></li>
+                            <li><a href="@Url.Action("Index","Yazar")">Listele</a></li>
                             <li><a href="javascript:void(0)">Kitap Ekle</a></li>
                         </ul>
                     </li>
@@ -251,6 +260,6 @@
     </script>
     <!-- SweetAlert Js -->
     <script src="~/Content/Js/sweetalert2.all.min.js"></script>
-    <script src="~/Content/Js/Main.js"></script>
+    @RenderSection("Scripts", false/*required*/)
 </body>
 </html>

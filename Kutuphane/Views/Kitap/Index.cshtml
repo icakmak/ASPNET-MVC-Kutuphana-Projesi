@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Kitaplar";
+    string kategoriler = "";
+}
+@using Kutuphane.Data.Model
+@model List<Kitap>
+
+@section Scripts
+{
+    <script src="~/Content/Js/Kategori.js"></script>
+}
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th style="width:10%">No</th>
+            <th style="width:40%">Ad</th>
+            <th style="width:10%">Kategori</th>
+            <th style="width:10%">adet</th>
+            <th style="width:10%">Yazar</th>
+            <th style="width:10%">Güncelle</th>
+            <th style="width:10%">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ktp in Model)
+        {
+        <tr>
+            <td id="td_1_@ktp.Id">@ktp.SiraNo</td>
+            <td id="td_2_@ktp.Id">@ktp.Ad</td>
+            <td id="td_3_@ktp.Id">
+                
+            </td>
+
+            <td id="td_4_@ktp.Id">@ktp.Adet</td>
+            <td id="td_5_@ktp.Id">@ktp.YazarId</td>
+            <td><button class="guncelle btn btn-custom" value="@ktp.Id">Güncelle</button></td>
+            <td><button class="sil btn btn-danger" value="@ktp.Id">Sil</button></td>
+        </tr>
+        }
+    </tbody>
+
+</table>

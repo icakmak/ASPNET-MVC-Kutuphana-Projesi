@@ -1,5 +1,4 @@
-﻿using Kutuphane.Data;
-using Kutuphane.Data.Model;
+﻿using Kutuphane.Data.Model;
 using Kutuphane.Data.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -9,33 +8,32 @@ using System.Web.Mvc;
 
 namespace Kutuphane.Controllers
 {
-    public class KategoriController : Controller
+    public class YazarController : Controller
     {
         UnitOfWork unitOfWork;
-        public KategoriController()
+        public YazarController()
         {
             unitOfWork = new UnitOfWork();
         }
         public ActionResult Index()
         {
-            var kategoriler = unitOfWork.GetRepository<Kategori>().GetAll();
-
-            return View(kategoriler);
+            var yazarlar = unitOfWork.GetRepository<Yazar>().GetAll();
+            return View(yazarlar);
         }
         [HttpPost]
-        public JsonResult EkleJson(string ktgAd)
+        public JsonResult EkleJson(string yzrAd)
         {
-            Kategori ktgri = new Kategori();
-            ktgri.Ad = ktgAd;
-            var eklenenKtg = unitOfWork.GetRepository<Kategori>().Add(ktgri);
+            Yazar yzr = new Yazar();
+            yzr.Ad = yzrAd;
+            var eklenenYzr = unitOfWork.GetRepository<Yazar>().Add(yzr);
             unitOfWork.SaveChanges();
             return Json(
                 new
                 {
                     Result = new
                     {
-                        Id = eklenenKtg.Id,
-                        Ad = eklenenKtg.Ad,
+                        Id = eklenenYzr.Id,
+                        Ad = eklenenYzr.Ad,
 
                     },
                     JsonRequestBehavior.AllowGet
@@ -43,10 +41,10 @@ namespace Kutuphane.Controllers
                 );
         }
         [HttpPost]
-        public JsonResult GuncelleJson(int ktgId, string ktgAd)
+        public JsonResult GuncelleJson(int yzrId, string yzrAd)
         {
-            var kategori = unitOfWork.GetRepository<Kategori>().GetById(ktgId);
-            kategori.Ad = ktgAd;
+            var yazar = unitOfWork.GetRepository<Yazar>().GetById(yzrId);
+            yazar.Ad = yzrAd;
             var durum = unitOfWork.SaveChanges();
             if (durum > 0)
             {
@@ -55,9 +53,9 @@ namespace Kutuphane.Controllers
             return Json(0);
         }
         [HttpPost]
-        public JsonResult SilJson(int ktgId)
+        public JsonResult SilJson(int yzrId)
         {
-            unitOfWork.GetRepository<Kategori>().Delete(ktgId);
+            unitOfWork.GetRepository<Yazar>().Delete(yzrId);
             var durum = unitOfWork.SaveChanges();
             if (durum > 0)
             {
@@ -65,6 +63,5 @@ namespace Kutuphane.Controllers
             }
             return Json(0);
         }
-
     }
 }

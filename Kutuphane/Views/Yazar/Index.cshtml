@@ -1,14 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Kategoriler";
+    ViewBag.Title = "Yazarlar Listesi";
 }
 @using Kutuphane.Data.Model
-@model List<Kategori>
+@model List<Yazar>
 
 @section Scripts
 {
 
-    <script src="~/Content/Js/Kategori.js"></script>
+    <script src="~/Content/Js/Yazar.js"></script>
 }
 <table id="example" class="display" style="width:100%">
     <thead>
@@ -20,13 +20,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var ktg in Model)
+        @foreach (var yzr in Model)
         {
             <tr>
-                <td id="td_@ktg.Id">@ktg.Ad</td>
+                <td id="td_@yzr.Id">@yzr.Ad</td>
                 <td></td>
-                <td><button class="guncelle btn btn-custom" value="@ktg.Id">Güncelle</button></td>
-                <td><button class="sil btn btn-danger" value="@ktg.Id">Sil</button></td>
+                <td><button class="guncelle btn btn-custom" value="@yzr.Id">Güncelle</button></td>
+                <td><button class="sil btn btn-danger" value="@yzr.Id">Sil</button></td>
             </tr>
         }
     </tbody>

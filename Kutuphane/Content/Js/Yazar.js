@@ -1,39 +1,40 @@
-﻿$(document).on("click", ".ktgEkle", async function () {
-    const { value: formValues } = await Swal.fire({
-        title: 'Kategori Ekle',
+﻿$(document).on("click", ".yzrEkle", async function () {
+    const { value: formValues } = await 
+    Swal.fire({
+        title: 'Yazar Ekle',
         html:
-            '<input id="ktgAd" class="swal2-input">',
+            '<input id="yzrAd" class="swal2-input">',
     })
 
     if (formValues) {
-        var ktgAd = $("#ktgAd").val();
-        
+        var yzrAd = $("#yzrAd").val();
+
         $.ajax({
             type: 'Post',
-            url: '/Kategori/EkleJson',
-            data: { "ktgAd": ktgAd },
+            url: '/Yazar/EkleJson',
+            data: { "yzrAd": yzrAd },
             dataType: 'Json',
             success: function (data) {
-                var ktgId = '<td>' + data.Result.Id +'</td>';
-                var ktgAd = '<td>' + data.Result.Ad + '</td>';
+                var yzrId = '<td>' + data.Result.Id +'</td>';
+                var yzrAd = '<td>' + data.Result.Ad + '</td>';
                 var gncBtn = '<td><button class="guncelle btn btn-custom" value="' + data.Result.Id + '">Güncelle</button></td>';
                 var silBtn = '<td><button class="sil btn btn-danger" value="' + data.Result.Id + '">sil</button></td>';
 
                 
                 var kitapSayisi = '<td>0</td>';
                 $("#example tbody").prepend(
-                    "<tr>"  + ktgAd + kitapSayisi + gncBtn + silBtn+'</tr>'
+                    "<tr>"  + yzrAd + kitapSayisi + gncBtn + silBtn+'</tr>'
                 );
                 Swal.fire({
                     type: 'success',
-                    title: 'Kategori Eklendi',
+                    title: 'Yazar Eklendi',
                     text: 'işlem Başarı ile Gerçekleşti!'
                 });
             },
             error: function () {
                 Swal.fire({
                     type: 'error',
-                    title: 'Kategori Eklenemedi',
+                    title: 'Yazar Eklenemedi',
                     text: 'Bir Sorun İle Karşılaşıldı!'
                 });
             }
@@ -43,28 +44,29 @@
 });
 
 $(document).on("click", ".guncelle", async function () {
-    var ktgId = $(this).val();
-    var ktgAdTd = $("#td_" + ktgId).text();
+    var yzrId = $(this).val();
+    var yzrAdTd = $("#td_" + yzrId).text();
+    console.log(yzrAdTd)
     const { value: formValues } = await Swal.fire({
-        title: 'Kategori Güncelle',
+        title: 'Yazar Güncelle',
         html:
-            '<input id="ktgAd" class="swal2-input" value=' + ktgAdTd + '>',
+            '<input id="yzrAd" class="swal2-input" value="' + yzrAdTd + '">',
     });
 
     if (formValues) {
-        var ktgAd = $("#ktgAd").val();
+        var yzrAd = $("#yzrAd").val();
 
         $.ajax({
             type: 'Post',
-            url: '/Kategori/GuncelleJson',
-            data: { "ktgId": ktgId, "ktgAd": ktgAd },
+            url: '/Yazar/GuncelleJson',
+            data: { "yzrId": yzrId, "yzrAd": yzrAd },
             dataType: 'Json',
             success: function (data) {
                 if (data == 1) {
-                    $("#td_" + ktgId).text(ktgAd);
+                    $("#td_" + yzrId).text(yzrAd);
                     Swal.fire({
                         type: 'success',
-                        title: 'Kategori Güncellendi',
+                        title: 'Yazar Güncellendi',
                         text: 'işlem Başarı ile Gerçekleşti!'
                     });
                 } else {
@@ -75,7 +77,7 @@ $(document).on("click", ".guncelle", async function () {
             error: function () {
                 Swal.fire({
                     type: 'error',
-                    title: 'Kategori Eklenemedi',
+                    title: 'Yazar Eklenemedi',
                     text: 'Bir Sorun İle Karşılaşıldı!'
                 });
             }
@@ -86,28 +88,28 @@ $(document).on("click", ".guncelle", async function () {
 });
 
 $(document).on("click", ".sil", async function () {
-    var ktgId = $(this).val();
-    var ktgAdTd = $("#td_" + ktgId).text();
+    var yzrId = $(this).val();
+    var yzrAdTd = $("#td_" + yzrId).text();
     var tr = $(this).parent("td").parent("tr");
     const { value: formValues } = await Swal.fire({
-        title: 'Kategori Silme',
+        title: 'Yazar Silme',
         html:
-            '<input id="ktgAd" class="swal2-input" value=' + ktgAdTd + '>',
+            '<input id="yzrAd" class="swal2-input" value="' + yzrAdTd + '">',
     });
     if (formValues) {
         tr.remove();
 
         $.ajax({
             type: 'Post',
-            url: '/Kategori/SilJson',
-            data: { "ktgId": ktgId },
+            url: '/Yazar/SilJson',
+            data: { "yzrId": yzrId },
             dataType: 'Json',
             success: function (data) {
                 if (data == 1) {
                     
                     Swal.fire({
                         type: 'success',
-                        title: 'Kategori Silindi',
+                        title: 'Yazar Silindi',
                         text: 'işlem Başarı ile Gerçekleşti!'
                     });
                 } else {
@@ -118,7 +120,7 @@ $(document).on("click", ".sil", async function () {
             error: function () {
                 Swal.fire({
                     type: 'error',
-                    title: 'Kategori Eklenemedi',
+                    title: 'Yazar Eklenemedi',
                     text: 'Bir Sorun İle Karşılaşıldı!'
                 });
             }

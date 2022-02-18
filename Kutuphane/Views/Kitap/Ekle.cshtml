@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Kitap Ekle";
+}
+@using Kutuphane.Data.Model
+@model List<Kategori>
+@section Scripts
+{
+
+    <script src="~/Content/Js/kitap.js"></script>
+}
+<h2>Kitap Ekle</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-3">Kitap Adı</label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="kitapAdi" placeholder="Kitap Adı">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3">Sıra No</label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="kitapSira" placeholder="Sıra No">
+        </div>
+    </div>
+    <div class="form-group">
+    <label class="col-md-3">Kitap Adeti</label>
+    <div class="col-md-9">
+        <input type="text" class="form-control" id="kitapAdet" placeholder="Kitap Adeti">
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3">Kategoriler</label>
+        <div class="col-md-7">
+            <select id="kategoriler" class="form-control">
+                @foreach (var item in ViewBag.Kategoriler)
+                {
+                    <option data-id="@item.Id">@item.Ad</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="button" class="btn btn-block btn-info" id="dEkle" value="Ekle">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3">Seçilen Kategoriler</label>
+        <div class="col-md-9" id="eklenenKategoriler">
+
+
+        </div>
+    </div>
+
+    <div class="form-group m-b-20">
+        <label class="col-md-3">Yazarlar</label>
+        <div class="col-md-9">
+            <select id="yazar" class="form-control">
+                @foreach (var item in ViewBag.Yazarlar)
+                {
+                    <option data-id="@item.Id">@item.Ad</option>
+                }
+            </select>
+        </div>
+    </div>
+    <hr />
+    <input type="button" class="btn btn-block btn-info" id="kitapKaydet" value="Kitap Ekle">
+</form>
